@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$Moderate_violet: hsl(263, 55%, 52%);
+$Very_dark_rayish_blue: hsl(217, 19%, 35%);
+$Very_dark_blackish_blue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+$Light_gray: hsl(0, 0%, 81%);
+$Light_grayish_blue: hsl(210, 46%, 95%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $Light_grayish_blue;
+  padding: 30px;
+  main {
+    .container {
+      display: flex;
+      gap: 30px;
+      .left {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        .card {
+          padding: 25px;
+          border-radius: 8px;
+          height: 100%;
+          .containerAvatar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .avatar {
+              width: 45px;
+              height: 45px;
+              border-radius: 100%;
+              object-fit: cover;
+            }
+            .containerName {
+              .name {
+                font-size: 16px;
+                font-weight: 600;
+                color: $White;
+              }
+              .position {
+                font-size: 16px;
+                font-weight: 500;
+                color: $Light_gray;
+              }
+            }
+          }
+          .title {
+            margin: 20px 0;
+            font-size: 24px;
+            color: $White;
+            font-weight: 600;
+          }
+          .desc {
+            font-size: 18px;
+            color: $Light_gray;
+          }
+        }
+        .containerCardTop {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          .card {
+            &:nth-child(1) {
+              background-color: $Moderate_violet;
+              background-image: url("../images/bg-pattern-quotation.svg");
+              background-repeat: no-repeat;
+              background-position: 500px 0;
+              background-size: 17%;
+              .containerAvatar {
+                .avatar {
+                  border: 3px solid $Light_grayish_blue;
+                }
+              }
+            }
+            &:nth-child(2) {
+              background-color: $Very_dark_rayish_blue;
+            }
+          }
+        }
+        .containerCardBottom {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          .card {
+            &:nth-child(1) {
+              background-color: $White;
+              .containerAvatar {
+                .containerName {
+                  .name {
+                    color: $Very_dark_blackish_blue;
+                  }
+                  .position {
+                    color: $Very_dark_rayish_blue;
+                  }
+                }
+              }
+              .title {
+                color: $Very_dark_blackish_blue;
+              }
+              .desc {
+                color: $Very_dark_rayish_blue;
+              }
+            }
+            &:nth-child(2) {
+              background-color: $Very_dark_blackish_blue;
+              .containerAvatar {
+                .avatar {
+                  border: 3px solid $Moderate_violet;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        .card {
+          padding: 30px;
+          border-radius: 8px;
+          background-color: $White;
+          height: 100%;
+          .containerAvatar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .avatar {
+              width: 45px;
+              height: 45px;
+              border-radius: 100%;
+              object-fit: cover;
+            }
+            .containerName {
+              .name {
+                font-size: 16px;
+                font-weight: 600;
+                color: $Very_dark_blackish_blue;
+              }
+              .position {
+                font-size: 16px;
+                font-weight: 500;
+                color: $Very_dark_rayish_blue;
+              }
+            }
+          }
+          .title {
+            margin: 30px 0;
+            font-size: 24px;
+            color: $Very_dark_blackish_blue;
+            font-weight: 600;
+          }
+          .desc {
+            font-size: 18px;
+            color: $Very_dark_rayish_blue;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        .left {
+          .containerCardTop {
+            flex-direction: column;
+            .card {
+              &:nth-child(1) {
+                background-size: auto;
+                background-position: top right;
+              }
+            }
+          }
+          .containerCardBottom {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
